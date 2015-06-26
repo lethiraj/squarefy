@@ -15,6 +15,8 @@ public abstract class Piece implements Playable {
 
     private int value;
     private Color color;
+    private int rank;
+    private char file;
 
     public Color getColor() {
         return color;
@@ -33,11 +35,13 @@ public abstract class Piece implements Playable {
     }
 
     public void setFile(char file) {
-        this.file = file;
+        if(file >= 'A' && file <= 'H') this.file = file;
+        else this.file = ' ';
     }
 
-    public void setColour(Color color) {
-        this.color = color;
+    public void setColor(Color color) {
+        if(color == Color.BLACK || color == Color.WHITE) this.color = color;
+        else this.color = null;
     }
 
     public int getRank() {
@@ -45,11 +49,7 @@ public abstract class Piece implements Playable {
     }
 
     public void setRank(int rank) {
-        this.rank = rank;
+        if(rank >= 1 && rank <= 8) this.rank = rank;
+        else this.rank = 0;
     }
-
-    private int rank;
-
-    private char file;
-
 }
