@@ -1,29 +1,11 @@
 package squarefy.src.pieces;
 
-import squarefy.src.rules.ChessPiece;
+import java.awt.*;
 
-public class Bishop implements ChessPiece {
+public class Bishop extends Piece {
 
-    public Bishop(){
+    public Bishop(Color color, char file, int rank){
+        super(color, 3*(color == Color.WHITE ? 1 : -1), file, rank);
     }
 
-    @Override
-    public int getValue() {
-        return value;
-    }
-
-    @Override
-    public int getSide() {
-        return side;
-    }
-
-    @Override
-    public int getRank() {
-        return 0;
-    }
-
-    @Override
-    public char getFile() {
-        return 0;
-    }
 }
