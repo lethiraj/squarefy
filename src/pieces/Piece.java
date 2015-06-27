@@ -6,17 +6,17 @@ import java.awt.*;
 
 public abstract class Piece implements Playable {
 
+    private int value;
+    private Color color;
+    private int rank;
+    private char file;
+
     public Piece(Color color, int value, char file, int rank){
         this.color = color;
         this.value = value;
         this.file = file;
         this.rank = rank;
     }
-
-    private int value;
-    private Color color;
-    private int rank;
-    private char file;
 
     public Color getColor() {
         return color;
