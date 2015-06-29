@@ -2,6 +2,9 @@ package squarefy.src.pieces;
 
 import java.awt.*;
 
+/**
+ * A knight is valued at 3 points
+ */
 public class Knight extends Piece {
 
     public Knight(Color color, char file, int rank){

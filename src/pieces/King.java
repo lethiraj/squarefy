@@ -2,6 +2,9 @@ package squarefy.src.pieces;
 
 import java.awt.*;
 
+/**
+ * A king is infinitely valuable
+ */
 public class King extends Piece {
 
     static final int KING_VALUE = 10_000_000;
