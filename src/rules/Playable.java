@@ -12,5 +12,8 @@ public interface Playable {
     int getRank();
     void setFile(char file);
     char getFile();
+    void move();
+    boolean canMove();
+
 
 }
