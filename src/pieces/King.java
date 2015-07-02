@@ -1,6 +1,9 @@
 package squarefy.src.pieces;
 
+import squarefy.src.board.Square;
+
 import java.awt.*;
+import java.util.ArrayList;
 
 /**
  * A king is infinitely valuable
@@ -21,8 +24,8 @@ public class King extends Piece {
     }
 
     @Override
-    public void move() {
-
+    public ArrayList<Square> getMoves() {
+        return moves;
     }
 
     @Override

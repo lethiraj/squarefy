@@ -1,6 +1,9 @@
 package squarefy.src.pieces;
 
+import squarefy.src.board.Square;
+
 import java.awt.*;
+import java.util.ArrayList;
 
 /**
  * A queen is valued at 9 points
@@ -18,8 +21,8 @@ public class Queen extends Piece {
 
 
     @Override
-    public void move() {
-
+    public ArrayList<Square> getMoves() {
+        return moves;
     }
 
     @Override

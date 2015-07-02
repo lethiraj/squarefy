@@ -1,6 +1,9 @@
 package squarefy.src.pieces;
 
+import squarefy.src.board.Square;
+
 import java.awt.*;
+import java.util.ArrayList;
 
 /**
  * A rook is valued at 5 points
@@ -17,15 +20,13 @@ public class Rook extends Piece {
     }
 
     @Override
-    public void move() {
-        if(canMove){
-
-        }
+    public ArrayList<Square> getMoves() {
+        return moves;
     }
 
     @Override
     public boolean canMove() {
-        return false;
+        return canMove;
     }
 
     @Override

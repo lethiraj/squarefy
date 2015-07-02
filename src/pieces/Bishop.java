@@ -1,6 +1,9 @@
 package squarefy.src.pieces;
 
+import squarefy.src.board.Square;
+
 import java.awt.*;
+import java.util.ArrayList;
 
 /**
  * A bishop is valued at 3 points
@@ -18,8 +21,9 @@ public class Bishop extends Piece {
     }
 
     @Override
-    public void move() {
+    public ArrayList<Square> getMoves() {
 
+        return moves;
     }
 
     @Override

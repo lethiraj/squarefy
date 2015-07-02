@@ -1,6 +1,9 @@
 package squarefy.src.rules;
 
+import squarefy.src.board.Square;
+
 import java.awt.*;
+import java.util.ArrayList;
 
 public interface Playable {
 
@@ -12,7 +15,7 @@ public interface Playable {
     int getRank();
     void setFile(char file);
     char getFile();
-    void move();
+    ArrayList<Square> getMoves();
     boolean canMove();
     boolean canCapture();
 
