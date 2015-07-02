@@ -10,7 +10,7 @@ import java.awt.*;
  */
 public class Board {
 
-    private Square board[][];
+    private static Square board[][];
 
     /**
      * Assigns chess pieces to their orthodox starting positions
@@ -53,7 +53,7 @@ public class Board {
         board[7][7] = new Square(new Rook(Color.BLACK, 'H', 8), Color.BLACK);
     }
 
-    public Square[][] getBoard() {
+    public static Square[][] getBoard() {
         return board;
     }
 
@@ -66,12 +66,16 @@ public class Board {
      *
      */
     private void print() {
+        System.out.println("  A  B  C  D  E  F  G  H");
         for(int i = 7; i >= 0; i = i - 1) {
+            System.out.print(i + 1 + " ");
             for (int j = 0; j < 8; j = j + 1) {
-                System.out.print(board[i][j] + (board[i][j].getColor() == Color.WHITE ? "w" : "b") + " ");
+                System.out.print(board[i][j] + " ");
             }
+            System.out.print(i + 1);
             System.out.println();
         }
+        System.out.println("  A  B  C  D  E  F  G  H");
     }
 
     public void swap(Square a, Square b){
