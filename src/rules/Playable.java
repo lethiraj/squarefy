@@ -14,6 +14,7 @@ public interface Playable {
     char getFile();
     void move();
     boolean canMove();
+    boolean canCapture();
 
 
 }

@@ -12,6 +12,9 @@ public class Board {
 
     private Square board[][];
 
+    /**
+     * Assigns chess pieces to their orthodox starting positions
+     */
     public Board() {
         board = new Square[8][8];
         for(int i = 0; i < 8; i = i + 1){
@@ -40,7 +43,7 @@ public class Board {
         board[0][5] = new Square(new Bishop(Color.WHITE, 'F', 1), Color.WHITE);
         board[0][6] = new Square(new Knight(Color.WHITE, 'G', 1), Color.BLACK);
         board[0][7] = new Square(new Rook(Color.WHITE, 'H', 1), Color.WHITE);
-        board[7][0] = new Square(new Rook(Color.BLACK, 'A', 8), Color.BLACK);
+        board[7][0] = new Square(new Rook(Color.BLACK, 'A', 8), Color.WHITE);
         board[7][1] = new Square(new Knight(Color.BLACK, 'B', 8), Color.BLACK);
         board[7][2] = new Square(new Bishop(Color.BLACK, 'C' , 8), Color.WHITE);
         board[7][3] = new Square(new Queen(Color.BLACK, 'D', 8), Color.BLACK);
@@ -58,10 +61,14 @@ public class Board {
         return board[rank - 1][(int)(file) - 65].getPiece();
     }
 
+    /**
+     * Prints a view of the board from a normal perspective of play
+     *
+     */
     private void print() {
         for(int i = 7; i >= 0; i = i - 1) {
             for (int j = 0; j < 8; j = j + 1) {
-                System.out.print(board[i][j] + " ");
+                System.out.print(board[i][j] + (board[i][j].getColor() == Color.WHITE ? "w" : "b") + " ");
             }
             System.out.println();
         }

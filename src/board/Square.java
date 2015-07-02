@@ -36,5 +36,8 @@ public class Square {
         return piece == null ? "X " : piece.toString();
     }
 
+    public boolean isEmpty(){
+        return piece == null;
+    }
 
 }

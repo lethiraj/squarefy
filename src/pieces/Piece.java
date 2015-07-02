@@ -1,5 +1,6 @@
 package squarefy.src.pieces;
 
+
 import squarefy.src.rules.Playable;
 
 import java.awt.*;
@@ -15,6 +16,7 @@ public abstract class Piece implements Playable {
     public Color color; // The color of the chess piece
     private int rank; // The row index of the piece
     private char file; // The column index of the piece
+    public boolean canMove, canCapture;
 
     public Piece(Color color, int value, char file, int rank){
         this.color = color;
@@ -38,7 +40,6 @@ public abstract class Piece implements Playable {
     public char getFile() {
         return file;
     }
-
 
     public void setFile(char file) {
         if(file >= 'A' && file <= 'H') this.file = file; // Only allows the game to set valid files for pieces

@@ -5,6 +5,4 @@ package squarefy.src.rules;
  */
 public interface EvaluableConstants {
 
-
-
 }

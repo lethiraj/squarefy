@@ -9,19 +9,27 @@ public class Rook extends Piece {
 
     public Rook(Color color, char file, int rank) {
         super(color, 5 * (color == Color.WHITE ? 1 : -1), file, rank);
+        canMove = canCapture = false;
     }
 
     public String toString() {
-        return ((this.color == Color.WHITE) ? "w" : "b") + "R";
+        return (this.color == Color.WHITE ? "w" : "b") + "R";
     }
 
     @Override
     public void move() {
+        if(canMove){
 
+        }
     }
 
     @Override
     public boolean canMove() {
         return false;
+    }
+
+    @Override
+    public boolean canCapture() {
+        return canCapture;
     }
 }

@@ -24,4 +24,9 @@ public class Knight extends Piece {
     public boolean canMove() {
         return false;
     }
+
+    @Override
+    public boolean canCapture() {
+        return false;
+    }
 }

@@ -9,6 +9,7 @@ public class Queen extends Piece {
 
     public Queen(Color color, char file, int rank) {
         super(color, 9 * (color == Color.WHITE ? 1 : -1), file, rank);
+        canMove = canCapture = false;
     }
 
     public String toString() {
@@ -23,6 +24,11 @@ public class Queen extends Piece {
 
     @Override
     public boolean canMove() {
-        return false;
+        return canMove;
+    }
+
+    @Override
+    public boolean canCapture() {
+        return canCapture;
     }
 }
