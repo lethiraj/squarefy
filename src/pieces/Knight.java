@@ -14,9 +14,6 @@ public class Knight extends Piece {
         super(color, 3 * (color == Color.WHITE ? 1 : -1), file, rank);
         canMove = true;
         canCapture = false;
-        moves.add(board[transform(rank) + 2][transform(file) - 1]);
-        moves.add(board[transform(rank) + 2][transform(file) + 1]);
-
     }
 
     public String toString() {
@@ -25,16 +22,28 @@ public class Knight extends Piece {
 
     @Override
     public ArrayList<Square> getMoves() {
+        for(int i = 2; i >= -2; i = i - 1){
+            moves.add(board[_rank + i][_file - 1]);
+            moves.add(board[_rank + i][_file + 1]);
+        }
+        validate(moves);
         return moves;
     }
 
     @Override
     public boolean canMove() {
-        return canMove;
+        return !moves.isEmpty();
     }
 
     @Override
     public boolean canCapture() {
         return canCapture;
     }
+
+    @Override
+    public void validate(ArrayList<Square> moves) {
+
+    }
+
+
 }

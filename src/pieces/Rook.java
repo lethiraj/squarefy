@@ -34,4 +34,11 @@ public class Rook extends Piece {
     public boolean canCapture() {
         return canCapture;
     }
+
+    @Override
+    public void validate(ArrayList<Square> moves) {
+
+    }
+
+
 }

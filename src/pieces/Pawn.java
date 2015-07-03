@@ -10,13 +10,13 @@ import java.util.ArrayList;
  */
 public class Pawn extends Piece {
 
+    int direction; // indicates the direction of movement (forward / backward)
+
     public Pawn(Color color, char file, int rank) {
         super(color, color == Color.WHITE ? 1 : -1, file, rank);
-        int direction = (color == Color.WHITE) ? 1 : -1;
+        direction= (color == Color.WHITE) ? 1 : -1;
         canMove = true;
         canCapture = false;
-        moves.add(board[transform(rank) + direction][transform(file)]);   //direction considers the direction
-        moves.add(board[transform(rank) + 2*direction][transform(file)]); //of piece movement (forward/backward)
     }
 
     public String toString() {
@@ -25,6 +25,9 @@ public class Pawn extends Piece {
 
     @Override
     public ArrayList<Square> getMoves() {
+        moves.add(board[_rank + direction][_file]);   //direction considers the direction
+        moves.add(board[_rank + 2*direction][_file]); //of piece movement (forward/backward)
+        validate(moves);
         return moves;
     }
 
@@ -37,4 +40,12 @@ public class Pawn extends Piece {
     public boolean canCapture() {
         return canCapture;
     }
+
+    @Override
+    public void validate(ArrayList<Square> moves) {
+        moves.add(board[transform(rank) + direction][transform(file)]);
+        moves.add(board[transform(rank) + 2*direction][transform(file)]);
+
+    }
+
 }

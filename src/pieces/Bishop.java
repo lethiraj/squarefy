@@ -22,7 +22,6 @@ public class Bishop extends Piece {
 
     @Override
     public ArrayList<Square> getMoves() {
-
         return moves;
     }
 
@@ -35,4 +34,10 @@ public class Bishop extends Piece {
     public boolean canCapture() {
         return false;
     }
+
+    @Override
+    public void validate(ArrayList<Square> moves) {
+
+    }
+
 }

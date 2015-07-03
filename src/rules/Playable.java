@@ -18,6 +18,6 @@ public interface Playable {
     ArrayList<Square> getMoves();
     boolean canMove();
     boolean canCapture();
-
+    void validate(ArrayList<Square> moves);
 
 }

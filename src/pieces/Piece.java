@@ -17,8 +17,10 @@ public abstract class Piece implements Playable {
 
     private int value; // The value of the chess piece represented by any subclass of this class
     public Color color; // The color of the chess piece
-    private int rank; // The row index of the piece
-    private char file; // The column index of the piece
+    protected int rank; // The row index of the piece
+    protected char file; // The column index of the piece
+    protected int _rank; // Transformed rank to array index
+    protected int _file; // Transformed file to array index
     public boolean canMove, canCapture;
     protected ArrayList<Square> moves;
     protected Square[][] board;
@@ -30,6 +32,8 @@ public abstract class Piece implements Playable {
         this.rank = rank;
         moves = new ArrayList<>();
         board = Board.getBoard();
+        _rank = transform(this.rank);
+        _file = transform(this.file);
     }
 
     public Color getColor() {
