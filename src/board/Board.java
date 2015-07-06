@@ -13,7 +13,7 @@ public class Board {
     private static Square board[][];
 
     /**
-     * Assigns chess pieces to their orthodox starting positions
+     * Assigns chess pieces to  orthodox starting positions
      */
     public Board() {
         board = new Square[8][8];
