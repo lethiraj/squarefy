@@ -23,16 +23,18 @@ public class Board {
                     case 1:
                         board[i][j] = new Square(new Pawn(Color.WHITE, (char) (65 + j), 2), (i + j) % 2 == 0 ? Color.BLACK : Color.WHITE);
                         break;
-                    case 6:
+                    case 2:
                         board[i][j] = new Square(new Pawn(Color.BLACK, (char) (65 + j), 7), (i + j) % 2 == 0 ? Color.BLACK : Color.WHITE);
                         break;
-                    case 2:
                     case 3:
                     case 4:
                     case 5:
+                    case 6:
+                    default:
                         board[i][j] = new Square(null, (i + j) % 2 == 0 ? Color.BLACK : Color.WHITE);
                         break;
                 }
+
             }
         }
         board[0][0] = new Square(new Rook(Color.WHITE, 'A', 1), Color.BLACK);
@@ -53,10 +55,20 @@ public class Board {
         board[7][7] = new Square(new Rook(Color.BLACK, 'H', 8), Color.BLACK);
     }
 
+    /**
+     * A method to return board object
+     * @return board
+     */
     public static Square[][] getBoard() {
         return board;
     }
 
+    /**
+     * A method to return the piece at
+     * @param file
+     * @param rank
+     * @return Piece
+     */
     public Piece getPieceAt(char file, int rank) {
         return board[rank - 1][(int)(file) - 65].getPiece();
     }
